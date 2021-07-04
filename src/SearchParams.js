@@ -4,7 +4,7 @@ import useDropdown from "./useDropdown";
 import "regenerator-runtime/runtime";
 import Results from "./Results";
 
-const BREEDS = ["BREED1", "BREED2", "BREED3", "BREED4", "BREED5"];
+
 
 const SearchParams = () => {
   let animalsToShow = ANIMALS.filter((animal) => {
@@ -14,6 +14,7 @@ const SearchParams = () => {
       return false;
     }
   });
+
   const [location, setLocation] = useState("Seattle, WA");
   const [animal, AnimalDropdown] = useDropdown("Animal", "dog", animalsToShow);
   const [breeds, setBreeds] = useState([]);
@@ -39,6 +40,8 @@ const SearchParams = () => {
       (err) => console.error(err)
     );
   }, [animal]);
+
+
 
   return (
     <div className="search-params">
